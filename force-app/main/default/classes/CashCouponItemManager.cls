@@ -10,6 +10,29 @@ global with sharing class CashCouponItemManager {
         
         return result;
     }
+
+    /**
+     * Sample Request
+    {
+        "cp_Coupon_Image": "url.img.jpg",
+        "cp_Coupon_Item_Name": "Apple Cash Card HKD500",
+        "cp_Description": "500 HKD Cash Card for Apple Services",
+        "cp_Face_Value": 500,
+        "cp_Minimum_Redeem_Balance": 100,
+        "cp_Offer_Code": "APLCS500",
+        "cp_Quota": 10,
+        "cp_Redeem_Once_Only": true,
+        "cp_Redeem_Status": "VALID",
+        "cp_Update_Coupon_Status_on_Redemption":true,
+        "cp_Update_Customer_Id_on_Coupon_Creation": true,
+        "cp_Update_Valid_From_on_Coupon_Creation": true,
+        "cp_Validate_Customer": true,
+        "cp_Validate_Date": true,
+        "cp_Validate_Status": true,
+        "cp_Valid_From_Offset_in_days": 30,
+        "cp_Valid_Length_in_days": 30
+    }
+     */
     
     @HttpPost
     global static Coupon_Item__c createCashCpItem(
@@ -53,7 +76,9 @@ global with sharing class CashCouponItemManager {
         );
         
         insert newcp;
-        return newcp;
+
+        Coupon_Item__c result = [Select Name From Coupon_Item__c Where Id=:newcp.Id];
+        return result;
     }
 
     @HttpPut
