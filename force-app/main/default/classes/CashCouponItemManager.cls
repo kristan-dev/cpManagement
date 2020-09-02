@@ -32,6 +32,7 @@ global with sharing class CashCouponItemManager {
         Integer cp_Valid_Length_in_days
         ) {
         Coupon_Item__c newcp = new Coupon_Item__c(
+            RecordTypeId = '0129D000000ej7xQAA',
             Coupon_Image__c = cp_Coupon_Image,
             Coupon_Item_Name__c = cp_Coupon_Item_Name,
             Description__c = cp_Description,
