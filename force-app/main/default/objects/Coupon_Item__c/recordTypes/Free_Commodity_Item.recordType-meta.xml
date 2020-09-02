@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Free_Commodity_Item</fullName>
+    <active>true</active>
+    <description>Free Commodity Item(s) (defined in coupon item) is given when the coupon is presented.</description>
+    <label>Free Commodity Item</label>
+    <picklistValues>
+        <picklist>Redeem_Status__c</picklist>
+        <values>
+            <fullName>EXPIRED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REDEEMED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VALID</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

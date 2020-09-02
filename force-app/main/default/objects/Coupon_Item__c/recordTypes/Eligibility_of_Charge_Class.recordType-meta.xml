@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Eligibility_of_Charge_Class</fullName>
+    <active>true</active>
+    <description>Allow to purchase offer(s) / product(s) with specific charge class (defined in coupon item).</description>
+    <label>Eligibility of Charge Class</label>
+    <picklistValues>
+        <picklist>Redeem_Status__c</picklist>
+        <values>
+            <fullName>EXPIRED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REDEEMED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VALID</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

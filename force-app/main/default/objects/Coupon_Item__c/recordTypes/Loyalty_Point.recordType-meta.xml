@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loyalty_Point</fullName>
+    <active>true</active>
+    <description>Award loyalty point (value defined in coupon item) to customer.</description>
+    <label>Loyalty Point</label>
+    <picklistValues>
+        <picklist>Redeem_Status__c</picklist>
+        <values>
+            <fullName>EXPIRED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REDEEMED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VALID</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

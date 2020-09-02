@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Rate</fullName>
+    <active>true</active>
+    <description>Apply a discount rate (defined in coupon item) to current order when this coupon is presented.</description>
+    <label>Discount Rate</label>
+    <picklistValues>
+        <picklist>Redeem_Status__c</picklist>
+        <values>
+            <fullName>EXPIRED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REDEEMED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VALID</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

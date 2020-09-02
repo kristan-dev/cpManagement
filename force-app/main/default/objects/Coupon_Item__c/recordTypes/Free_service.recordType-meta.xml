@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Free_service</fullName>
+    <active>true</active>
+    <description>Free service / VAS (defined in coupon item) is added to subscriber’s profile with the coupon.</description>
+    <label>Free service</label>
+    <picklistValues>
+        <picklist>Redeem_Status__c</picklist>
+        <values>
+            <fullName>EXPIRED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REDEEMED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VALID</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
