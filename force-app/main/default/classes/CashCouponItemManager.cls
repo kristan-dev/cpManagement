@@ -81,6 +81,12 @@ global with sharing class CashCouponItemManager {
         return result;
     }
 
+    /* Sample Request
+    {
+        "cp_itemid": "CLS0009",
+        "cp_status": "REDEEMED"
+    }
+    */
     @HttpPut
     global static String updateCashCpItem(String cp_itemid, String cp_status){
         Coupon_Item__c thisCp = [Select Redeem_Status__c From Coupon_Item__c where Name=:cp_itemid];
