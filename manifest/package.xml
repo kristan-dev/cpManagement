@@ -4,6 +4,7 @@
         <members>CouponItemManager</members>
         <name>ApexClass</name>
     </types>
+    <!--
     <types>
         <members>SerializedCouponManager</members>
         <name>ApexClass</name>
@@ -16,6 +17,7 @@
         <members>*</members>
         <name>ApexTrigger</name>
     </types>
+    -->
     <!--
     <types>
         <members>*</members>

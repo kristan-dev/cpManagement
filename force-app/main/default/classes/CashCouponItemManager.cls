@@ -1,6 +1,5 @@
-@RestResource(urlMapping='/test/cpitem/cash/*')
-global with sharing class CouponItemManager {
-    
+@RestResource(urlMapping='/cpitem/cash/*')
+global with sharing class CashCouponItemManager {
     @HttpGet
     global static Coupon_Item__c getCouponItemById() {
         RestRequest request = RestContext.request;
