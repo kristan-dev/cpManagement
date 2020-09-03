@@ -6,7 +6,19 @@ global with sharing class CashCouponItemManager {
         
         String cpItemId = request.requestURI.substring(request.requestURI.lastIndexOf('/')+1);
         
-        Coupon_Item__c result = [Select Name, RecordTypeId, Coupon_Item_Name__c, Description__c, Face_Value__c, Minimum_Redeem_Balance__c, Offer_Code__c, Redeem_Status__c, Validate_Status__c From Coupon_Item__c where Name=:cpItemId];
+        Coupon_Item__c result = [
+            Select Name, 
+            RecordTypeId, 
+            Coupon_Item_Name__c, 
+            Description__c, 
+            Face_Value__c, 
+            Minimum_Redeem_Balance__c, 
+            Offer_Code__c, 
+            Redeem_Status__c, 
+            Validate_Status__c 
+            From Coupon_Item__c 
+            Where (Name=:cpItemId AND RecordTypeId='0129D000000ej7xQAA')
+        ];
         
         return result;
     }
@@ -87,7 +99,7 @@ global with sharing class CashCouponItemManager {
         "cp_status": "REDEEMED"
     }
     */
-    @HttpPut
+    @HttpPatch
     global static String updateCashCpItem(String cp_itemid, String cp_status){
         Coupon_Item__c thisCp = [Select Redeem_Status__c From Coupon_Item__c where Name=:cp_itemid];
         thisCp.Redeem_Status__c = cp_status;
