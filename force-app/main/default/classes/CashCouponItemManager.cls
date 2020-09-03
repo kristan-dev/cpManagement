@@ -1,5 +1,6 @@
 @RestResource(urlMapping='/cpitem/test/cash/*')
 global with sharing class CashCouponItemManager {
+
     @HttpGet
     global static Coupon_Item__c getCouponItemById() {
         RestRequest request = RestContext.request;
@@ -95,15 +96,23 @@ global with sharing class CashCouponItemManager {
 
     /* Sample Request
     {
-        "cp_itemid": "CLS0009",
-        "cp_status": "REDEEMED"
+        "Coupon_Image__c": "New URL",
+        "Redeem_Status__c": "New Status"
     }
     */
     @HttpPatch
-    global static String updateCashCpItem(String cp_itemid, String cp_status){
-        Coupon_Item__c thisCp = [Select Redeem_Status__c From Coupon_Item__c where Name=:cp_itemid];
-        thisCp.Redeem_Status__c = cp_status;
+    global static Coupon_Item__c updateCashCpItem() {
+        RestRequest request = RestContext.request;
+        String cpItemId = request.requestURI.substring(request.requestURI.lastIndexOf('/')+1);
+
+        Coupon_Item__c thisCp = [Select Name From Coupon_Item__c where Name=:cpItemId];
+        Map<String,Object> params = (Map<String,Object>)JSON.deserializeUntyped(request.requestBody.toString());
+
+        for(String fieldName: params.keySet()) {
+            thisCp.put(fieldName, params.get(fieldName));
+        }
         update thisCp;
-        return 'Record updated';
+        return thisCp;
     }
+    
 }
